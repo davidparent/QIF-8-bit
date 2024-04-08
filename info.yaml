@@ -18,7 +18,7 @@ project:
     - "tt_um_QIF_8bit.v"
     - "QIFNeuron.v"
 
-# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+# The pinout of  your project. Leave unused pins blank. DO NOT delete or add any pins.
 pinout:
   # Inputs
   ui[0]: "B0"
