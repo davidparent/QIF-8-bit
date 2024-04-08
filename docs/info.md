@@ -9,12 +9,12 @@ You can also include images in this folder and reference them in the markdown. E
 
 ## How it works
 
-Explain how your project works
+The QIF is a nonlinear circuit that integrates the square of the output with the input and resets from a peak value to a lower value.
 
 ## How to test
 
-Explain how to use your project
+Input a positive 8-bit vector and set the clock, and reset, and it should spike.
 
 ## External hardware
 
-List external hardware used in your project (e.g. PMOD, LED display, etc), if any
+I would use an ADLAM200 for the test vectors.
