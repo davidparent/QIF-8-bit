@@ -12,6 +12,8 @@ module tt_um_QIF_8bit #( parameter MAX_COUNT = 24'd10_000_000 ) (
 );
     assign uio_oe = 8'b00000001;
     //assign uio_out[7:0] = 8'd0;
+    assign uio_out = 0;
+    assign uio_oe  = 0;
    
      QIFNeuron neuron (
        .clk(clk),
