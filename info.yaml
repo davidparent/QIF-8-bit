@@ -1,6 +1,6 @@
 # Tiny Tapeout project information
 project:
-  title:        "QIF-*-bin"      # Project title
+  title:        "QIF-8-bit"      # Project title
   author:       "David PArent"      # Your name
   discord:      ""      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
   description:  "It is an 8-bit quadratic integrate and fire digital circuit"      # One line description of what your project does
