@@ -3,30 +3,22 @@
 
 import cocotb
 from cocotb.clock import Clock
-from cocotb.triggers import ClockCycles
+from cocotb.triggers import RisingEdge, FallingEdge, Timer, ClockCycles
 
+
+ 
 @cocotb.test()
-async def test_project(dut):
-  dut._log.info("Start")
-  
-  # Our example module doesn't use clock and reset, but we show how to use them here anyway.
-  clock = Clock(dut.clk, 10, units="us")
-  cocotb.start_soon(clock.start())
+async def test_QIFNeuron(dut):
+    dut._log.info("start")
+    clock = Clock(dut.clk, 1, units="ms")
+    cocotb.start_soon(clock.start())
 
-  # Reset
-  dut._log.info("Reset")
-  dut.ena.value = 1
-  dut.ui_in.value = 0
-  dut.uio_in.value = 0
-  dut.rst_n.value = 0
-  await ClockCycles(dut.clk, 10)
-  dut.rst_n.value = 1
-
-  # Set the input values, wait one clock cycle, and check the output
-  dut._log.info("Test")
-  dut.ui_in.value = 20
-  dut.uio_in.value = 30
-
-  await ClockCycles(dut.clk, 1)
-
-  assert dut.uo_out.value == 50
+    # reset the circuit
+    dut.rst_n.value = 0
+    # wait for 5 clock cycles
+    await ClockCycles(dut.clk, 5)
+    # take the design out of reset
+    dut.rst_n.value = 1
+   
+    dut.ui_in.value = 4
+    await ClockCycles(dut.clk, 50)
