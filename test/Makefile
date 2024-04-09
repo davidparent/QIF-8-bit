@@ -5,7 +5,9 @@
 SIM ?= icarus
 TOPLEVEL_LANG ?= verilog
 SRC_DIR = $(PWD)/../src
-PROJECT_SOURCES =tb.v tt_um_QIF_8bit.v QIFNeuron.v
+PROJECT_SOURCES =tb.v 
+PROJECT_SOURCES +=tt_um_QIF_8bit.v 
+PROJECT_SOURCES +=QIFNeuron.v
 
 ifneq ($(GATES),yes)
 
